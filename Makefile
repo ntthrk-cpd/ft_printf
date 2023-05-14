@@ -6,13 +6,14 @@
 #    By: ncheepan <ncheepan@student.42bangkok.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/14 00:46:09 by ncheepan          #+#    #+#              #
-#    Updated: 2023/05/14 01:31:55 by ncheepan         ###   ########.fr        #
+#    Updated: 2023/05/14 17:30:10 by ncheepan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
-SRC_DIR = srcs
-OBJ_DIR = obj
+SRC_DIR = ./srcs
+OBJ_DIR = ./obj
+INCLUDE = ./include
 CC : gcc
 CFLAGS : -Wall -Wextra -Werror
 AR : ar
@@ -23,7 +24,7 @@ RMFLAGS : -rf
 SRCS = $(wildcard $(SRC_DIR)/*.c)
 OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-all = $(NAME)
+all :$(NAME)
 
 $(NAME) : $(OBJS)
 	$(AR) $(ARFLAGS) $@ $?
