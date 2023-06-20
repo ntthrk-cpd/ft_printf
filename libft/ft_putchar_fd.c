@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 10:16:53 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/06/20 11:56:24 by ncheepan         ###   ########.fr       */
+/*   Created: 2023/02/25 19:07:12 by ncheepan          #+#    #+#             */
+/*   Updated: 2023/03/13 01:28:37 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-size_t  ft_strlen(const char *str);
-void	ft_putchar_fd(char c, int fd);
-
-#endif
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}

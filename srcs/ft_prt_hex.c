@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_prt_hex.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncheepan <ncheepan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 10:16:53 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/06/20 11:56:24 by ncheepan         ###   ########.fr       */
+/*   Created: 2023/06/20 19:29:34 by ncheepan          #+#    #+#             */
+/*   Updated: 2023/06/20 20:00:31 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	LIBFT_H
-# define LIBFT_H
+int	ft_prt_hex(char *nptr)
+{
+	int	len_hex;
 
-size_t  ft_strlen(const char *str);
-void	ft_putchar_fd(char c, int fd);
-
-#endif
+	len_hex = 0;
+	ft_atoi(nptr);
+	return (len_hex);
+}

@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_prtint.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncheepan <ncheepan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 10:16:53 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/06/20 11:56:24 by ncheepan         ###   ########.fr       */
+/*   Created: 2023/06/20 19:06:05 by ncheepan          #+#    #+#             */
+/*   Updated: 2023/06/20 19:24:41 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	LIBFT_H
-# define LIBFT_H
-
-size_t  ft_strlen(const char *str);
-void	ft_putchar_fd(char c, int fd);
-
-#endif
+int	ft_prt_int(int num)
+{
+	int	len_num;
+	
+	len_num = 0;
+	len_num = ft_strlen(ft_itoa(num));
+	ft_putnbr_fd(num, len_num);
+	return (len_num);
+}
