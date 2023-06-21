@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 00:45:22 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/06/20 19:08:41 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/06/21 23:11:56 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,15 @@ int	ft_dispart(char *format, va_list *args)
 	else if (*format == 's')
 		len += ft_prtstr(va_arg(args, char *)));
 	else if (*format == 'p')
+		// va_arg(args, void *);
 	else if (*format == 'd' || *format == 'i')
-		len += ft_prtint(va_arg(args, int));
+		len += ft_prt_int(va_arg(args, int));
 	else if (*format == 'u')		
-	else if (*format == 'x'|| *format == 'X')
+		// va_arg(args, unsigned int)
+	else if (*format == 'x')
+		len += ft_prt_hex(va_arg(args, unsigned int), 'x');
+	else if (*format == 'X')
+		len += ft_prt_hex(va_arg(args, unsigned int), 'X');
 	return len;
 }
 
