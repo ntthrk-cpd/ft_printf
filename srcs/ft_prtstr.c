@@ -6,9 +6,11 @@
 /*   By: ncheepan <ncheepan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 19:02:13 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/06/20 19:02:23 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/06/22 11:55:09 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../include/libftprintf.h"
 
 int     ft_prtstr(char *str)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncheepan <ncheepan@student.42bangkok.com>  +#+  +:+       +#+        */
+/*   By: ntthrk-ch <ntthrk-ch@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 00:45:22 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/06/21 23:11:56 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/06/23 19:09:30 by ntthrk-ch        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ int	ft_dispart(char *format, va_list *args)
 	else if (*format == 's')
 		len += ft_prtstr(va_arg(args, char *)));
 	else if (*format == 'p')
-		// va_arg(args, void *);
+		len += ft_prt_pointer(va_arg(args, void *);
 	else if (*format == 'd' || *format == 'i')
 		len += ft_prt_int(va_arg(args, int));
 	else if (*format == 'u')		
-		// va_arg(args, unsigned int)
+		len += ft_prt_unsigned(va_arg(args, unsigned int));
 	else if (*format == 'x')
 		len += ft_prt_hex(va_arg(args, unsigned int), 'x');
 	else if (*format == 'X')
@@ -51,7 +51,7 @@ int	ft_printf(const char *format, ...)
 			printf_length += ft_dispart(*++format, args);
 		else
 			printf_length += ft_putchar_fd(*format, sizeof(char));
-		format++;
+		format++;   
 	}
 	va_end(args);
 	return (printf_length);	

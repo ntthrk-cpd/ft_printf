@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_prt_hex.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncheepan <ncheepan@student.42bangkok.com>  +#+  +:+       +#+        */
+/*   By: ntthrk-ch <ntthrk-ch@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 19:29:34 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/06/21 23:47:56 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/06/23 19:10:21 by ntthrk-ch        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../include/libftprintf.h"
 
 int     ft_put_digit(unsigned int digit, char x)
 {
@@ -21,7 +23,7 @@ int     ft_put_digit(unsigned int digit, char x)
         return (1);
 }
 
-int     ft_prthex(unsigned int num_hex, char x)
+int     ft_prt_hex(unsigned int num_hex, char x)
 {
         int     len_hex;
         unsigned int digit;

@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_prt_pointer.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ntthrk-ch <ntthrk-ch@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 00:48:13 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/06/23 20:18:23 by ntthrk-ch        ###   ########.fr       */
+/*   Created: 2023/06/23 17:29:55 by ncheepan          #+#    #+#             */
+/*   Updated: 2023/06/23 17:35:28 by ntthrk-ch        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+#include "../include/libftprintf.h"
 
-size_t	ft_strlen(const char *str)
+int ft_prt_pointer(void *p)
 {
-	size_t	size_str;
+    int len;
 
-	size_str = 0;
-	while (*str++)
-		size_str++;
-	return (size_str);
+    len = 0;
+        
+    return (len);
 }

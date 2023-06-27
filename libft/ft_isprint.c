@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ntthrk-ch <ntthrk-ch@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 00:48:13 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/06/23 20:18:23 by ntthrk-ch        ###   ########.fr       */
+/*   Created: 2023/02/15 20:06:46 by ncheepan          #+#    #+#             */
+/*   Updated: 2023/04/18 21:52:32 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+#include        "libft.h"
 
-size_t	ft_strlen(const char *str)
+int	ft_isprint(int ch)
 {
-	size_t	size_str;
-
-	size_str = 0;
-	while (*str++)
-		size_str++;
-	return (size_str);
+	if (ch > 31 && ch < 127)
+		return (1);
+	return (0);
 }

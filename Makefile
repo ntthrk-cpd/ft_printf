@@ -3,41 +3,41 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ncheepan <ncheepan@student.42bangkok.com>  +#+  +:+       +#+         #
+#    By: ntthrk-ch <ntthrk-ch@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/14 00:46:09 by ncheepan          #+#    #+#              #
-#    Updated: 2023/06/20 13:56:11 by ncheepan         ###   ########.fr        #
+#    Updated: 2023/06/24 17:08:24 by ntthrk-ch        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a
+NAME = libftprintf.a , libft.a
+INCLUDE = include -I. 
 SRC_DIR = srcs
-OBJ_DIR = obj
-INCLUDE = include
+LIBFT_DIR = libft
+BUILD_DIR = build
+
+MKDIR_P = mkdir -p
 CC : gcc
 CFLAGS : -Wall -Wextra -Werror
 AR : ar
 ARFLAGS : -csr
 RM : rm
 RMFLAGS : -rf
-MKDIR_P = mkdir -p
 
-SRCS = $(wildcard $(SRC_DIR)/*.c)
-OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+$(NAME) : $(BUILD_DIR) $(OBJS)
+	$(AR) $(ARFLAGS) $(BUILD_DIR) $(OBJS)
+
+BUILDS = $(wildcard ./[$(SRC_DIR),$(LIBFT_DIR)]/*.c)
+OBJS = $(addprefix $(BUILD_DIR)/,$(patsubst %.c,%.o,$(BUILDS)))
+	
+%(BUILD_DIR)/%.o : src/%.c
+		$(MKDIR_P) $(@D)
+        $(CC) $(CFLAGS) -c $< -o $@
 
 all :$(NAME)
 
-$(NAME) : $(OBJS)
-	$(AR) $(ARFLAGS) $@ $?
-
-$(OBJ_DIR)/%.o : $(SRC_DIR)/%.c | $(OBJ_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(OBJ_DIR)
-	 MKDIR_P $@
-
 clean :
-	$(RM) $(RMFLAGS) $(OBJ_DIR)
+	$(RM) $(RMFLAGS) $(BUILD_DIR)
 
 fclean : clean
 	$(RM) $(RMFLAGS) $(NAME)
