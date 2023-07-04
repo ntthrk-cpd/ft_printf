@@ -6,11 +6,11 @@
 /*   By: ntthrk-ch <ntthrk-ch@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 00:45:22 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/06/23 19:09:30 by ntthrk-ch        ###   ########.fr       */
+/*   Updated: 2023/06/29 22:59:16 by ntthrk-ch        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libftprintf.h"
+#include "libftprintf.h"
 
 int	ft_dispart(char *format, va_list *args)
 {
@@ -18,7 +18,7 @@ int	ft_dispart(char *format, va_list *args)
 
 	len = 0;
 	if (*format == '%')
-		len += ft_putchar_fd('%', sizeof(char);
+		len += ft_putchar_fd('%', sizeof(char));
 	else if (*format == 'c')
 		len += ft_prtchr(va_arg(args, char));
 	else if (*format == 's')

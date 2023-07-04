@@ -6,11 +6,11 @@
 /*   By: ntthrk-ch <ntthrk-ch@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 19:29:34 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/06/23 19:10:21 by ntthrk-ch        ###   ########.fr       */
+/*   Updated: 2023/06/29 22:58:20 by ntthrk-ch        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libftprintf.h"
+#include "libftprintf.h"
 
 int     ft_put_digit(unsigned int digit, char x)
 {

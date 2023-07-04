@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_prt_int.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncheepan <ncheepan@student.42bangkok.com>  +#+  +:+       +#+        */
+/*   By: ntthrk-ch <ntthrk-ch@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 19:06:05 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/06/22 11:55:35 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/06/29 22:58:18 by ntthrk-ch        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libftprintf.h"
+#include "libftprintf.h"
 
 int	ft_prt_int(int num)
 {

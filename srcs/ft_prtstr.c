@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_prtstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncheepan <ncheepan@student.42bangkok.com>  +#+  +:+       +#+        */
+/*   By: ntthrk-ch <ntthrk-ch@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 19:02:13 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/06/22 11:55:09 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/06/29 22:58:09 by ntthrk-ch        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libftprintf.h"
+#include "libftprintf.h"
 
 int     ft_prtstr(char *str)
 {

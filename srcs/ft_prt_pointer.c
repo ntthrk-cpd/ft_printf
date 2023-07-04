@@ -6,11 +6,11 @@
 /*   By: ntthrk-ch <ntthrk-ch@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 17:29:55 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/06/23 17:35:28 by ntthrk-ch        ###   ########.fr       */
+/*   Updated: 2023/06/29 22:58:16 by ntthrk-ch        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libftprintf.h"
+#include "libftprintf.h"
 
 int ft_prt_pointer(void *p)
 {
