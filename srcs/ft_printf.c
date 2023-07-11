@@ -3,56 +3,49 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ntthrk-ch <ntthrk-ch@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ncheepan <ncheepan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/14 00:45:22 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/06/29 22:59:16 by ntthrk-ch        ###   ########.fr       */
+/*   Created: 2023/07/10 17:16:58 by ncheepan          #+#    #+#             */
+/*   Updated: 2023/07/11 17:33:49 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	ft_dispart(char *format, va_list *args)
+int ft_parse_flags(const char *format, va_list args)
 {
-	int	len;
+    t_flags flags;
+    int i;
+    int printf_count;
 
-	len = 0;
-	if (*format == '%')
-		len += ft_putchar_fd('%', sizeof(char));
-	else if (*format == 'c')
-		len += ft_prtchr(va_arg(args, char));
-	else if (*format == 's')
-		len += ft_prtstr(va_arg(args, char *)));
-	else if (*format == 'p')
-		len += ft_prt_pointer(va_arg(args, void *);
-	else if (*format == 'd' || *format == 'i')
-		len += ft_prt_int(va_arg(args, int));
-	else if (*format == 'u')		
-		len += ft_prt_unsigned(va_arg(args, unsigned int));
-	else if (*format == 'x')
-		len += ft_prt_hex(va_arg(args, unsigned int), 'x');
-	else if (*format == 'X')
-		len += ft_prt_hex(va_arg(args, unsigned int), 'X');
-	return len;
+    i = 0;
+    printf_count = 0;
+    while (format[i])
+    {
+        if (format[i] == '%')
+        {
+            i++;
+            ft_init_flags(&flags);
+            i = ft_set_flags((char *)(format + i), args, &flags);
+            //printf_count += ft_print_flags(args, &flags);
+        }
+        else
+            printf_count += ft_prtchr(format[i]);
+        i++;
+    }
+    return (printf_count);
 }
 
-int	ft_printf(const char *format, ...)
+int ft_printf(const char *format, ...)
 {
-	int	printf_length;
-	va_list	args;
-
-	if (!format || format == '\0')
-		return (0);
-	printf_length = 0;
-	va_start(args, format);
-	while(*format)
-	{
-		if(*format == '%')
-			printf_length += ft_dispart(*++format, args);
-		else
-			printf_length += ft_putchar_fd(*format, sizeof(char));
-		format++;   
-	}
-	va_end(args);
-	return (printf_length);	
+    int printf_count;
+    va_list args;
+    
+    if (!format || !*format)
+        return (0);  
+    printf_count = 0;
+    va_start(args, format);
+    printf_count = ft_parse_flags(format, args);
+    va_end(args);
+    return (printf_count);
 }

@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_flags.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncheepan <ncheepan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/12 22:28:42 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/07/10 17:20:10 by ncheepan         ###   ########.fr       */
+/*   Created: 2023/07/10 19:37:03 by ncheepan          #+#    #+#             */
+/*   Updated: 2023/07/11 16:28:13 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
-int	ft_lstsize(t_list *lst)
+int ft_flags(const char *format, int i, t_flags *flags)
 {
-	int	length;
-
-	length = 0;
-	while (lst != NULL)
-	{
-		length++;
-		lst = lst->next;
-	}
-	return (length);
+    while (format[i] == '-' || format[i] == '0')
+    {
+        if (format[i] == '-')
+            flags->minus = 1;
+        else if (format[i] == '0')
+            flags->zero = 1;
+        i++;
+    }
+    return (i);
 }
+
+//check csdiuxXp
+
+//check flags
+
+//check width
+
+//

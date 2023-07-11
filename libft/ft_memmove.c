@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncheepan <ncheepan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 13:02:44 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/04/19 01:05:51 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/07/10 17:20:14 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	if (dest == src || n == 0)
 		return (dest);
 	if (char_dest > char_src)
-	{	
+	{
 		char_dest += n;
 		char_src += n;
 		while (n--)

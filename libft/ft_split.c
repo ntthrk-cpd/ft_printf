@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncheepan <ncheepan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 03:16:27 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/04/11 16:14:54 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/07/10 17:20:20 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_getstring(char const *s1, char c, int i)
 	s2 = 0;
 	start = 0;
 	while (i-- >= 0)
-	{	
+	{
 		while (s1[start] == c)
 			start++;
 		while (s1[start] != c && i >= 0)
@@ -46,7 +46,7 @@ static void	*ft_memfree(char **str_list, int i)
 
 	j = 0;
 	while (j < i)
-	{	
+	{
 		free(str_list[j]);
 		j++;
 	}

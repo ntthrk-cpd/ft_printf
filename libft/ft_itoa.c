@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncheepan <ncheepan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 00:45:43 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/04/20 15:35:51 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/07/10 17:20:00 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*ft_tochar(char *str, int n, int len)
 	{
 		negative = 1;
 		if (n == -2147483648)
-		{	
+		{
 			str[len--] = (n % 10 * -1) + '0';
 			n /= 10;
 		}
