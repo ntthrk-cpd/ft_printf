@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 10:21:45 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/07/11 17:30:29 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/07/11 18:06:35 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_flags
     char type;
 }   t_flags;
 
-t_flags *ft_init_flags(t_flags *flags);
+void *ft_init_flags(t_flags *flags);
 int     ft_set_flags(const char *format, va_list args, t_flags *flags);
 int     ft_set_flags_minus(t_flags *flags);
 int     ft_set_flags_sign(t_flags *flags);
