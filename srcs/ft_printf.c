@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 17:16:58 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/07/11 17:33:49 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/07/12 14:32:49 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ int ft_parse_flags(const char *format, va_list args)
     printf_count = 0;
     while (format[i])
     {
+        ft_init_flags(&flags);
         if (format[i] == '%')
         {
             i++;
-            ft_init_flags(&flags);
-            i = ft_set_flags((char *)(format + i), args, &flags);
-            //printf_count += ft_print_flags(args, &flags);
+            i += ft_set_flags((char *)(format + i), args, &flags);
+            printf_count += ft_print_flags(args, &flags);
         }
         else
             printf_count += ft_prtchr(format[i]);

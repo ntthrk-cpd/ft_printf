@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 19:06:05 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/07/10 17:19:00 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/07/12 14:51:06 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,4 @@ int	ft_prt_int(int num)
 	ft_putnbr_fd(num, len_num);
 	return (len_num);
 }
+

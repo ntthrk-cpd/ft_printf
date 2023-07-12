@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 19:02:13 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/07/10 17:19:05 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/07/12 15:08:19 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,7 @@ int     ft_prtstr(char *str)
 
         len_str = 0;
         if (str == NULL)
-        {
-                #ifdef __linux__
-                        str = "(null)";
-                #elif __APPLE__
-                        str = "\0";
-                #endif
-        }
+                str = (char *)PRINT_NULL;
         len_str = ft_strlen(str);
         ft_putstr_fd(str, len_str);
         return len_str;

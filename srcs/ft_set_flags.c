@@ -6,13 +6,13 @@
 /*   By: ncheepan <ncheepan@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 20:04:16 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/07/11 17:32:18 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/07/12 14:31:34 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void *ft_init_flags(t_flags flags)
+void    ft_init_flags(t_flags *flags)
 {
     flags->flags_minus = 0;
     flags->flags_sign = 0;
@@ -49,8 +49,8 @@ int ft_set_flags(const char *format, va_list args, t_flags *flags)
     }
     flags_count += ft_set_flags_width(format, args, flags);
     if (format[flags_count] == '.')
-        flags_count += ft_set_flags_precision(format, args, flags);
-    flags_count += ft_set_flags_type(format, flags, flags_count);
+        flags_count += ft_set_flags_precision(format + flags_count, args, flags);
+    flags_count += ft_set_flags_type(format + flags_count, flags, flags_count);
     return (flags_count);
 }
 
@@ -84,58 +84,58 @@ int ft_set_flags_hash(t_flags *flags)
     return (1);
 }
 
-// int ft_set_flags_width(const char *format, va_list args, t_flags *flags)
-// {
-//     int i;
+int ft_set_flags_width(const char *format, va_list args, t_flags *flags)
+{
+    int i;
 
-//     i = 0;
-//     if (format[i] == '*')
-//     {
-//         flags->width = va_arg(args, int);
-//         if (flags->width < 0)
-//         {
-//             flags->flags_minus = 1;
-//             flags->width *= -1;
-//         }
-//         return (1);
-//     }
-//     else if (ft_isdigit(format[i]))
-//     {
-//         flags->width = ft_atoi(format + i);
-//         while (ft_isdigit(format[i]))
-//             i++;
-//         return (i);
-//     }
-//     return (0);
-// }
+    i = 0;
+    if (format[i] == '*')
+    {
+        flags->width = va_arg(args, int);
+        if (flags->width < 0)
+        {
+            flags->flags_minus = 1;
+            flags->width *= -1;
+        }
+        return (1);
+    }
+    else if (ft_isdigit(format[i]))
+    {
+        flags->width = ft_atoi(format + i);
+        while (ft_isdigit(format[i]))
+            i++;
+        return (i);
+    }
+    return (0);
+}
 
-// int ft_set_precision(const char *format, va_list args, t_flags *flags)
-// {
-//     int i;
+int ft_set_precision(const char *format, va_list args, t_flags *flags)
+{
+    int i;
 
-//     i = 0;
-//     if (format[i] == '*')
-//     {
-//         flags->precision = va_arg(args, int);
-//         if (flags->precision < 0)
-//             flags->dot = 0;
-//         return (1);
-//     }
-//     else if (ft_isdigit(format[i]))
-//     {
-//         flags->precision = ft_atoi(format + i);
-//         while (ft_isdigit(format[i]))
-//             i++;
-//         return (i);
-//     }
-//     return (0);
-// }
+    i = 0;
+    if (format[i] == '*')
+    {
+        flags->precision = va_arg(args, int);
+        if (flags->precision < 0)
+            flags->dot = 0;
+        return (1);
+    }
+    else if (ft_isdigit(format[i]))
+    {
+        flags->precision = ft_atoi(format + i);
+        while (ft_isdigit(format[i]))
+            i++;
+        return (i);
+    }
+    return (0);
+}
 
 int ft_set_flags_type(const char *format, t_flags *flags, int flags_count)
 {
     char *type;
 
-    type = "cspdiuxX";
+    type = "cspdiuxX%";
     if (ft_memset((void *)type
         , (int)format[flags_count]
         , sizeof(char) * ft_strlen(type)))
